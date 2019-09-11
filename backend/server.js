@@ -8,6 +8,9 @@ app.use(bodyParser.json())
 const expressValidator = require('express-validator')
 app.use(expressValidator())
 
+const router = require('router')
+app.use(router)
+
 app.listen(3000, () => {
     console.log("Server connected to port 3000")
 })
@@ -32,4 +35,8 @@ mongoose.connection.on('error', function (err) {
 
 mongoose.connection.on('disconnected', function () {
     console.log(disconnected("mongoose default connection is disconnected"))
+})
+
+
+app.get('/', (req, res) => {
 })
