@@ -13,7 +13,7 @@ describe('Server App', ()=>{
     it('should send response 200', (done)=>{
         chai.request(app).get('/')
         .then((res)=>{
-            express(res).to.have.status(200)
+            expect(res).to.have.status(200)
         })
         done()
     })
