@@ -8,7 +8,5 @@ app.use(bodyParser.json())
 const expressValidator = require('express-validator')
 app.use(expressValidator())
 
-app.listen(3000, () => {
-    console.log("Server connected to port 3000")
-})
+
 
