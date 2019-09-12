@@ -1,6 +1,5 @@
 const chai = require('chai')
 const expect = chai.expect
-chai.should()
 const app = require('../server')
 const http = require('chai-http')
 chai.use(http)
@@ -14,6 +13,8 @@ describe('Server App', ()=>{
         chai.request(app).get('/')
         .then((res)=>{
             expect(res).to.have.status(200)
+        }).catch((error)=>{
+            console.log('Error', error);
         })
         done()
     })
