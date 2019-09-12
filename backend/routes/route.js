@@ -1,6 +1,7 @@
-module.export = (router) => {
+const expresss = require('express')
+const router = expresss.Router()
+const controller = require('../controller/LoginController')
 
-    const controller = require('../controller/LoginController')
-    
-    router.post('/login', controller.login())
-}
+router.post('/login', controller.login)
+
+module.exports = router

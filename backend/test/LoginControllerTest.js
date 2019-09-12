@@ -6,16 +6,16 @@ let login = require('../controller/LoginController')
 const app = require('../server')
 
 describe('Login User', () => {
-    it('should return status 422 for empty input', (done) => {
+
+    it('should return 200 for valid input', (done) => {
         chai.request(app)
             .post('/login')
             .send({
-                'email': '',
-                'password': ''
+                'email': 'abcd@gmail.com',
+                'password': 'abcd@1234'
             })
             .end((err, res) => {
-                console.log(res);
-                res.should.have.status(422)
+                res.should.have.status(200)
             })
         done()
     })

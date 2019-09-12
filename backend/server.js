@@ -4,13 +4,14 @@ const app = express()
 const expressValidator = require('express-validator')
 app.use(expressValidator())
 
-const router = require('router')
-app.use(router)
+
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
+const router = require('./routes/route')
+app.use(router)
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 const dbConfig = require('./Config/dbConfig.js')
@@ -25,8 +26,8 @@ mongoose.connect(dbConfig.url, {
     process.exit()
 })
 
-app.listen(process.env.portNumber, () => {
-    console.log('server connected to port')
+app.listen(3000, () => {
+    console.log('server connected to port '+3000)
 })
 
 app.get('/', () => {
