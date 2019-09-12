@@ -16,8 +16,8 @@ let users = mongoose.model('user', loginSchema)
 
 class UserModel {
     login = (body, callback) => {
-        users.find({ email: body.email, password: body.password }, (err, result) => {
-            if (err) {
+        users.find({ email: body.email, password: body.password }, (error, result) => {
+            if (error) {
                 return callback(null);
             }
             if (result.length !== 0) {

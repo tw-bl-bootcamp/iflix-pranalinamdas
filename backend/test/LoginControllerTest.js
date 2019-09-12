@@ -14,8 +14,8 @@ describe('Login User', () => {
                 'email': 'abcd@gmail.com',
                 'password': 'abcd@1234'
             })
-            .end((err, res) => {
-                res.should.have.status(200)
+            .end((error, response) => {
+                response.should.have.status(200)
             })
         done()
     })
