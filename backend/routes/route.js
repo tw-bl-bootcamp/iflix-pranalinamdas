@@ -5,6 +5,7 @@ const movieController = require('../controller/MovieController')
 
 router.post('/login', controller.login)
 
-router.post('/movieList', movieController.movieList)
+router.get('/movieList', movieController.movieList)
+
 
 module.exports = router

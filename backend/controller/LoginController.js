@@ -12,7 +12,7 @@ exports.login = (request, response) => {
             'message': 'Errors in data validations',
             'data': errors
         }
-        result.send(result)
+        response.send(result)
     }
 
     let loginData = {
@@ -27,7 +27,7 @@ exports.login = (request, response) => {
                 'message': 'login data not correct',
                 'data': error
             }
-            result.send(result)
+            response.send(result)
         }
 
         let result = {
@@ -35,6 +35,6 @@ exports.login = (request, response) => {
             'message': 'login Successful',
             'data': data
         }
-        result.send(result)
+        response.send(result)
     })
 }
