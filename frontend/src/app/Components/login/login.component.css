@@ -1,0 +1,23 @@
+::ng-deep.mat-card-title{
+    font-size: 45px;
+    color: rgb(144, 84, 201);
+    font-family: 'Tele-Bold'; 
+}
+
+::ng-deep.mat-card-subtitle {   
+    font-weight: 100;
+    font-size: 25px;
+    color: crimson;
+    font-family: 'Tele-Bold'; 
+}
+
+.login {
+  height: 70vh;
+}
+
+::ng-deep.mat-raised-button {
+  size: 30px;
+  color: cornsilk;
+  background-color: crimson;
+  font-family: 'Tele-Bold'; 
+}

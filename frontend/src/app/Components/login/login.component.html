@@ -1,0 +1,37 @@
+<div class="login" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card fxFlex="30">
+  
+      <mat-card-header fxLayoutAlign="center">
+        <mat-card-title>Welcome to iFlix</mat-card-title>
+        <mat-card-subtitle fxLayoutAlign="center">Login</mat-card-subtitle>
+      </mat-card-header>
+  
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field [style.fontSize.px]="12" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter your Email" type="email" [formControl]="email" required>
+          <mat-icon matSuffix> email </mat-icon>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+  
+  
+      <div fxLayout="row" fxLayoutAlign="center center"  >
+        <mat-form-field [style.fontSize.px]="12" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput #input minlength="8" placeholder="Enter your password" type="password" [formControl]="password"
+            required [type]="hide ? 'password' : 'text'">
+          <mat-hint>password should have minimum 8 characters {{input.value?.length > 8}} </mat-hint>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+  
+      <div class="buttons" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10%">
+        <button mat-raised-button type="button">Login</button>
+      </div>
+  
+    </mat-card>
+  </div>
