@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-let mongooseSchema = mongoose.Schema
+let mongooseSchema = mongoose.Schema;
 let loginSchema = mongooseSchema({
     "email": {
         type: String,
@@ -12,17 +12,16 @@ let loginSchema = mongooseSchema({
     }
 });
 
-let users = mongoose.model('user', loginSchema)
+let users = mongoose.model('user', loginSchema);
 
 class UserModel {
     login = (body, callback) => {
-        users.find({ email: body.email, password: body.password }, (error, result) => {
-            if (error) {
-                return callback(null);
+        users.find({ email: body.email, password: body.password }, (err, result) => {
+            if (err) {
+                return callback(err);
             }
-            if (result.length !== 0) {
+            if (result.length != 0) {                
                 return callback(null, result);
-
             }
             console.log("invalid user");
             return callback(null, "invalid user");
@@ -30,5 +29,5 @@ class UserModel {
     }
 }
 
-let model = new UserModel()
-module.exports = model
+let model = new UserModel();
+module.exports = model;

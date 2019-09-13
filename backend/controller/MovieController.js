@@ -1,4 +1,4 @@
-let movieService = require('../service/MovieService')
+let movieService = require('../service/MovieService');
 
 exports.movieList = (request, response) => {
 
@@ -9,6 +9,7 @@ exports.movieList = (request, response) => {
         'ratings': request.body.ratings,
         'category': request.body.category
     }
+   console.log("movie data in controller==>",movieData);
    
     movieService.showMovieList(movieData, (error, data) => {
         if (error) {
@@ -17,7 +18,7 @@ exports.movieList = (request, response) => {
                 'message': 'error in showing movie list',
                 'data': error
             }
-            response.send(result)
+            response.send(result);
         }
 
         let result = {
@@ -25,6 +26,6 @@ exports.movieList = (request, response) => {
             'message': 'movie list shown successfully',
             'data': data
         }
-        response.send(result)
+        response.send(result);
     })
 }

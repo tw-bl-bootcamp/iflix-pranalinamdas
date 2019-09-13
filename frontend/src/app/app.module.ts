@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatRippleModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';

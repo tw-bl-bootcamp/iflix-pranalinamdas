@@ -18,6 +18,5 @@ export class HttpService {
     let response = this.http.get(environment.apiBaseUrl + url);
     return response;
   }
-
 }
  

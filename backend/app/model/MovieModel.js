@@ -30,10 +30,10 @@ class MovieModel {
     constructor() { }
 
     showMovieList(data, callback) {
-        movies.find((error, result) => {
-            if (error) {
-                console.log("error in model", error);
-                return callback(error)
+        movies.find((err, result) => {
+            if (err) {
+                console.log("error in model", err);
+                return callback(err)
             }
 
             if (result.length != 0) {
