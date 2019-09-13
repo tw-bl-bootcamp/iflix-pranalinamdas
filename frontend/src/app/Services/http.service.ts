@@ -10,11 +10,14 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   postLogin(user: User, url) {
-    console.log("login data in http ==>", user);
-
     let response = this.http.post(environment.apiBaseUrl + url, user);
-    console.log("response in http ==>",response);
+    return response;
+  }
+
+  get(url){
+    let response = this.http.get(environment.apiBaseUrl + url);
     return response;
   }
 
 }
+ 

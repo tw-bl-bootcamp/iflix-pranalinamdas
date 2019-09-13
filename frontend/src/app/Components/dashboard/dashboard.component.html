@@ -1,0 +1,24 @@
+
+<div fxFlex="100" fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="10">
+    <div fxFlex="80" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="10">
+      
+       <div fxFlex="35" fxLayoutAlign="center center"  *ngFor="let movie of movies" > 
+        <mat-card fxFlex="90" fxLayoutAlign="space-around center" fxLayoutGap="10" >
+          <div fxLayout="column">
+            <mat-card-header>
+            <mat-card-title>Title: {{movie.title}}</mat-card-title>
+            <mat-card-subtitle>Language: {{movie.language}}</mat-card-subtitle>
+            <mat-card-subtitle>Reviews: {{movie.reviews}}</mat-card-subtitle>
+            <mat-card-subtitle>ratings: {{movie.ratings}}</mat-card-subtitle>
+            <mat-card-subtitle>Category: {{movie.category}}</mat-card-subtitle>
+          </mat-card-header>
+          </div>
+          <div class="buttons" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10%">
+            <button mat-raised-button type="button">Book Tickets</button>
+          </div>
+        </mat-card>
+  
+      </div>
+    </div>
+  </div>
+  

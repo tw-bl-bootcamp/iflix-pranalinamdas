@@ -22,9 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   hide = true;
-  constructor(private httpService: HttpService,
-    private snackbar: MatSnackBar,
-    private router: Router) { }
+  constructor(private httpService: HttpService, private snackbar: MatSnackBar, private router: Router) { }
 
   user: User = new User();
 
@@ -43,6 +41,7 @@ export class LoginComponent implements OnInit {
       (res: any) => {
         if (res.status == 200) {
           this.snackbar.open("login Suceessfully", "end now", { duration: 4000 });
+          this.router.navigateByUrl('dashboard');
         }
         else {
           this.snackbar.open("login failed", "end now", { duration: 4000 });
